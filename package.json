@@ -1,0 +1,14 @@
+{
+  "name": "eCommIt",
+  "description": "Scalable ecommerce app written in Node.js",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+    "querystring": "*",
+    "mongojs": "*",
+    "mongodb": "*",
+    "monk": "*",
+    "crypto": "*"
+  }
+}
