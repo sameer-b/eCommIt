@@ -6,13 +6,10 @@
   "dependencies": {
     "express": "*",
     "querystring": "*",
-    "mongojs": "*",
     "mongodb": "*",
-    "monk": "*",
     "crypto": "*",
     "cookie-parser": "*",
-    "promise" : "*",
-    "mongo-sync" : "*",
-    "fibers": "*"
+    "mongojs": "*"
+
   }
 }

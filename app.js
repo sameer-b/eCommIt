@@ -11,12 +11,12 @@ app.get('/register',function(request,response){
 
 
 app.post('/addUser',function(request,response){
-	um.handleAddUser(request,response); 
+	um.handleAddUser(request,response);
 });
 
 app.get('/login',function(request,response){
     response.end("<html><head><title></title></head><body><form action=\"/authUser\" method=\"POST\">  Email: <input name=\"email\"/> Password: <input name=\"password\"/> <button type=\"submit\">Register</button></form></body></html>");
-    
+
 });
 
 app.post('/authUser', function(request,response){
