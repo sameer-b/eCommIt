@@ -9,6 +9,10 @@
     "mongojs": "*",
     "mongodb": "*",
     "monk": "*",
-    "crypto": "*"
+    "crypto": "*",
+    "cookie-parser": "*",
+    "promise" : "*",
+    "mongo-sync" : "*",
+    "fibers": "*"
   }
 }

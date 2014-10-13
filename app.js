@@ -1,17 +1,8 @@
 var express = require('express');
-var qs = require('querystring');
-var mongo = require('mongodb');
-var crypto = require('crypto');
 var util = require('./util.js');
-
-
-var databaseUrl = "localhost:27017/ecommit"; // "username:password@example.com/mydb"
-var collections = ["users"]
-var db = require("mongojs").connect(databaseUrl, collections);
-
-
+var cookieParser = require('cookie-parser');
 var app = express();
-
+app.use(cookieParser());
 
 
 app.get('/register',function(request,response){
@@ -20,26 +11,27 @@ app.get('/register',function(request,response){
 
 
 app.post('/addUser',function(request,response){
-	var body = '';
-    request.on('data', function (data) {
-        body += data;
-		
-		// Too much POST data, kill the connection!
-        if (body.length > 1e6)
-            request.connection.destroy();
-    });
+	util.handleAddUser(request,response); 
+});
 
-    request.on('end', function () {
-    	var post = qs.parse(body);
-    	util.validateUser(post.name, post.email , post.password, post.confirmPassword,request,response);
-    });
+app.get('/login',function(request,response){
+    response.end("<html><head><title></title></head><body><form action=\"/authUser\" method=\"POST\">  Email: <input name=\"email\"/> Password: <input name=\"password\"/> <button type=\"submit\">Register</button></form></body></html>");
+    
+});
 
-   
+app.post('/authUser', function(request,response){
+    //util.authenticateUser(request.cookies,response);
+    util.handleLogin(request,response);
+
+});
+
+app.get('/home', function( request , response ){
+    var content="<html><head></head><body><h1>Home</h1></body></html>";
+    util.authenticateUser(request.cookies,response,content);
+
 });
 
 
-
-
 var server=app.listen(3000,function(){
-	console.log('Starting server: ');
+	console.log('Starting eCommIt! ');
 });
