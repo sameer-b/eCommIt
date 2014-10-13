@@ -1,5 +1,5 @@
 var express = require('express');
-var util = require('./util.js');
+var um = require('./lib/userManagement.js');
 var cookieParser = require('cookie-parser');
 var app = express();
 app.use(cookieParser());
@@ -11,7 +11,7 @@ app.get('/register',function(request,response){
 
 
 app.post('/addUser',function(request,response){
-	util.handleAddUser(request,response); 
+	um.handleAddUser(request,response); 
 });
 
 app.get('/login',function(request,response){
@@ -20,15 +20,13 @@ app.get('/login',function(request,response){
 });
 
 app.post('/authUser', function(request,response){
-    //util.authenticateUser(request.cookies,response);
-    util.handleLogin(request,response);
-
+    um.handleLogin(request,response);
 });
 
 app.get('/home', function( request , response ){
     var content="<html><head></head><body><h1>Home</h1></body></html>";
-    util.authenticateUser(request.cookies,response,content);
-
+    //
+    um.authenticateUser(request.cookies,response,content);
 });
 
 
