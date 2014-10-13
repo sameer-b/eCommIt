@@ -10,10 +10,19 @@ cd into the repo directory.
  `cd ecommit`   
 Get the required node packages.  
 `npm install `
-## Running ## 
+## Running ##
+ 
 Start a mongo server instance.  
 `mongod --dbpath PATH_TO_YOUR_REPO/data`  
 You can start it anywhere you like.  
 
 Run the app with.  
-`node app.js`
+`node app.js`  
+
+##Code structure##
+`/data (empty directory to start mongodb instance)  `  
+`/lib  (Contains libraries for various functions)  `  
+`/views (Contains the html views)  `  
+`app.js  (Main app)  `  
+`package.json  (Required Packages)  `  
+`README.md `  
