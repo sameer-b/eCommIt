@@ -9,7 +9,8 @@
     "mongodb": "*",
     "crypto": "*",
     "cookie-parser": "*",
-    "mongojs": "*"
+    "mongojs": "*",
+    "jade" : "*"
 
   }
 }

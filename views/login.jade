@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+	head 
+		link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
+		link(type='text/css', rel='stylesheet', href='/css/bootstrap-responsive.css')
+		
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+		title Login - eCommIt
+body
+	.container
+		form.form-signin(action='authUser', method='POST')
+			h2.form-signin-heading Please sign in
+			input.input-block-level(type='text', name = 'email', placeholder='Email address')
+			input.input-block-level(type='password', name = 'password' , placeholder='Password')
+			label.checkbox Remember Me
+			input(type='checkbox', name='rememberMe')
+			button.btn.btn-large.btn-primary(type='submit') Sign in
+
+
+
