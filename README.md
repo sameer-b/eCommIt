@@ -7,7 +7,7 @@ Before you even clone the repo make sure you have MongoDB installed.
 Clone the repo
  `git clone "https://github.com/sameer-b/eCommIt"`  
 cd into the repo directory.  
- `cd ecommit`
+ `cd ecommit`  
 Get the required node packages.  
 `npm install `
 ## Running ##
