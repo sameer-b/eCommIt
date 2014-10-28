@@ -13,8 +13,7 @@ app.set('view engine', 'jade');
 
 
 app.get('/register', function (request, response) {
-	response.render('register')
-	response.end();
+	response.render('register');
 });
 
 
@@ -24,7 +23,6 @@ app.post('/addUser', function (request, response) {
 
 app.get('/login', function (request, response) {
   response.render('login');
-  response.end();
 });
 
 app.get('/logout' , function ( request , response ) {
