@@ -15,7 +15,6 @@ app.set('view engine', 'jade');
 app.get('/register', function (request, response) {
 	response.render('register')
 	response.end();
- //response.end("<html><head><title></title></head><body><form action=\"/addUser\" method=\"POST\"> Name: <input name=\"name\"/> Email: <input name=\"email\"/> Password: <input name=\"password\"/> Confirm Password: <input name=\"confirmPassword\"/><button type=\"submit\">Register</button></form></body></html>");
 });
 
 
@@ -25,9 +24,11 @@ app.post('/addUser', function (request, response) {
 
 app.get('/login', function (request, response) {
   response.render('login');
-  //response.end();
-  //response.end("<html><head><title></title></head><body><form action=\"/authUser\" method=\"POST\">  Email: <input name=\"email\"/> Password: <input name=\"password\"/> <button type=\"submit\">Register</button></form></body></html>");
+  response.end();
+});
 
+app.get('/logout' , function ( request , response ) {
+  um.logUserOut(request.cookies , response );
 });
 
 app.post('/authUser', function (request, response) {
