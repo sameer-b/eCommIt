@@ -34,11 +34,14 @@ app.post('/authUser', function (request, response) {
 });
 
 app.get('/home', function (request, response) {
-    var content = "<html><head></head><body><h1>Home</h1></body></html>";
-    um.authenticateUser(request.cookies, response, content);
-   // response.render('home');
+  var content = "<html><head></head><body><h1>Home</h1></body></html>";
+  um.authenticateUser(request.cookies, response, content);
 });
 
+app.get('/newProduct' , function (request , response ){
+  var content = 'newProduct';
+  um.authenticateUser(request.cookies, response, content);
+});
 
 var server = app.listen(3000, function () {
   console.log('Starting eCommIt! ');
