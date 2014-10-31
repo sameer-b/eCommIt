@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+	head 
+		link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
+		link(type='text/css', rel='stylesheet', href='/css/bootstrap-responsive.css')
+		
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+		script(src='/js/addProducts.js')
+		title Register - eCommIt
+body
+	.container
+		form.form-signin(action='', method='POST')
+			h2.form-signin-heading Add new product
+			input.input-block-level(type='text', name = 'productName', placeholder='Product Name')
+			input.input-block-level(type='text', name = 'productPrice', placeholder='Price')
+			textarea.input-block-level(type='text', rows = '5' name = 'productDescription', placeholder='Description')
+			h4.form-signin-heading Product Specifications
+			input(class='col-md-4-offset-1' type='text', name = 'spec', placeholder='Specification 1')
+			input(class='col-md-4-offset-1' type='text', name = 'value', placeholder='Value of specification 1')
+			br
+			button.btn.btn-small.btn-primary.specButton(type='button') Add more specs
+
+
+
