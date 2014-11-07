@@ -10,7 +10,10 @@
     "crypto": "*",
     "cookie-parser": "*",
     "mongojs": "*",
-    "jade" : "*"
-
+    "jade" : "*",
+    "fs" : "*",
+    "formidable" : "*",
+    "body-parser" : "*",
+    "util" : "*"
   }
 }

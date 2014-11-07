@@ -6,7 +6,10 @@ html(lang="en")
 		
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
 		script(src='/js/addProducts.js')
-		title Register - eCommIt
+		title Product - eCommIt
 body
 	.container
-	h1 #{JSON.stringify(data)}
+		.imageBox
+	script(type="text/javascript", onload="renderImages(#{JSON.stringify(data)});", src="/js/addProducts.js")
+
+

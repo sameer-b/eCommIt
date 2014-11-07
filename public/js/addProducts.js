@@ -7,3 +7,17 @@
  		$('.specButton').before(addSpec,addSpecValue);
  	});
  });
+
+ $( document ).ready( function(data) {
+
+ });
+
+ var renderImages = function ( data ) {
+	 for(var img in(data.images)) {
+		 var source = "data:image/png;base64,"+data.images[img];
+		 var tag = "<img src=\""+source+"\"/>";
+		 $(".imageBox").append(tag);
+	 }
+
+
+ };
