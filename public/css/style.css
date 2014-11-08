@@ -2,9 +2,7 @@
     height:  50%;
 }
 
-body {
-    background-color: #e3e3e3;
-}
+
 pre {
     font-family:  inherit;
 }
@@ -17,9 +15,7 @@ pre {
     border: 1px solid darkgray;
 }
 
-.addToCartButton {
 
-}
 .thumbnail img {
     border: 1px solid darkgray;
     margin: 1px;
