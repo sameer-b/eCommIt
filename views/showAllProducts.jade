@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
+        link(type='text/css', rel='stylesheet', href='/css/bootstrap-responsive.css')
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='/js/addProducts.js')
+        title Product - eCommIt
+body
+    .container
+      table.table.table-condensed.table-bordered.table-striped
+         tr
+            th Product Name
+            th Edit
+         each product in data
+            tr
+               td <a href=/product/#{product.productID}> #{product.productName} </a>
+               td #{product.productPrice}
+
+

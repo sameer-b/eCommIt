@@ -1,4 +1,13 @@
- 
+$( document ).ready( function(data) {
+
+});
+
+
+
+
+ /*
+ This function attaches a listener on the button to add more specs.
+  */
  $( document ).ready( function() {
  	var numberOfSpecs = 1;
  	$('.specButton').click( function() {
@@ -8,16 +17,51 @@
  	});
  });
 
- $( document ).ready( function(data) {
 
- });
+ /*
+ 	This function initializes the thumbnails
+  */
 
  var renderImages = function ( data ) {
-	 for(var img in(data.images)) {
-		 var source = "data:image/png;base64,"+data.images[img];
-		 var tag = "<img src=\""+source+"\"/>";
-		 $(".imageBox").append(tag);
-	 }
+	 imageNumber = 0;
+	 var tag = "";
+		 for(var img in(data.images)) {
+			 imageNumber++;
+			 var source = "data:image/png;base64,"+data.images[img];
+			 tag = "<img src=\""+source+"\" id=\"thumbnail"+imageNumber+ "\" />";
+			 $(".thumbnail").append(tag);
+		}
+	 //After setting the thumbnails also set the preview image.
+	 $('.preview').append(tag);
+
 
 
  };
+
+/*
+	This function adds ability to click on the thumbnail and have it appear in the preview.
+ */
+ $( document ).ready( function(data) {
+
+	$('.thumbnail').children().click(function(){
+		$('.preview').children().remove();
+		$('.preview').append($(this).clone());
+	});
+
+ });
+
+/*
+This function enables clicking on the preview for the lightbox to show up.
+ */
+
+ $( document ).ready( function(data) {
+	 $('.preview').click(function() {
+		 var source = ($(this).children().attr("src"));
+		 ($(this).attr(
+			 {
+				 "data-lightbox" : "image-1",
+				 "href" : source
+			 }
+		 ));
+	 });
+ });

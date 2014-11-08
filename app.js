@@ -58,6 +58,10 @@ app.get('/product/:id', function ( request, response) {
   pm.showProduct(request,response,request.params.id);
 });
 
+app.get('/products', function( request, response){
+  pm.listProducts(request,response);
+});
+
 var server = app.listen(3000, function () {
   console.log('Starting eCommIt! ');
 });

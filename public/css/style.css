@@ -1,0 +1,33 @@
+.imageBox {
+    height:  50%;
+}
+
+body {
+    background-color: #e3e3e3;
+}
+pre {
+    font-family:  inherit;
+}
+.preview {
+    height: 50%;
+    overflow: hidden ;
+}
+
+.preview img {
+    border: 1px solid darkgray;
+}
+
+.addToCartButton {
+
+}
+.thumbnail img {
+    border: 1px solid darkgray;
+    margin: 1px;
+}
+.productDescription {
+    margin-top: 15%;
+}
+
+.specTable {
+margin-top:  5% ;
+}

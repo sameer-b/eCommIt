@@ -6,14 +6,16 @@ html(lang="en")
 		
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
 		script(src='/js/addProducts.js')
-		title Register - eCommIt
+		title New Product - eCommIt
 body
+
 	.container
 		form.form-signin(action='/addProduct', method='POST', enctype="multipart/form-data")
 			h2.form-signin-heading Add new product
 			input.input-block-level(type='text', name = 'productName', placeholder='Product Name')
 			input.input-block-level(type='text', name = 'productPrice', placeholder='Price')
 			textarea.input-block-level(type='text', rows = '5' name = 'productDescription', placeholder='Description')
+			textarea.input-block-level(type='text' rows = '4' name = 'productSummary' , placeholder = 'Product Summary')
 			input.input-block-level(type='file', name='image1')
 			input.input-block-level(type='file', name='image2')
 			input.input-block-level(type='file', name='image3')

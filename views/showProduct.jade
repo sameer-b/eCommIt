@@ -3,13 +3,65 @@ html(lang="en")
 	head 
 		link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
 		link(type='text/css', rel='stylesheet', href='/css/bootstrap-responsive.css')
-		
+		link(type='text/css', rel='stylesheet' href='/css/style.css')
+		link(type='text/css', rel='stylesheet' href='/css/lightbox.css')
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
 		script(src='/js/addProducts.js')
+		script(src='/js/lightbox.js')
 		title Product - eCommIt
 body
 	.container
-		.imageBox
+		ul(class="nav nav-pills" role="tablist")
+			li(role="presentation")
+				a(href='/products') Products
+			li(role="presentation")
+				a(href='/newProduct') Add Product
+			li(role="presentation")
+				a(href='/logout') Logout
+
+		.row
+			.span7
+				.imageBox
+					.thumbnail.span1
+					a.preview.span5
+			.span4
+				.imgPrice
+					.imageTitle
+						h2 #{data.productName}
+
+						.productSummary
+							pre #{data.productSummary}
+							h5 Price: #{data.productPrice}
+					.addToCartButton
+						input.btn.btn-large.btn-primary(value="Add To Cart")
+		.row
+			.span12
+				.productDescription
+					h3 Product Description
+					pre #{data.productDescription}
+
+		.row
+			.span12
+				table.table.table-condensed.table-bordered.table-striped.specTable
+					thread
+						tr
+							th Specification
+							th Value
+
+							- var x = 0		//h1 #{JSON.stringify(data.specs))
+						each key in (data.specs)
+
+							- if (++x%2 == 0)
+								td #{key}
+								tr
+
+							-else
+								td #{key}
+
+
+
+
+
 	script(type="text/javascript", onload="renderImages(#{JSON.stringify(data)});", src="/js/addProducts.js")
 
 
