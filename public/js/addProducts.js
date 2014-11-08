@@ -4,7 +4,6 @@ $( document ).ready( function(data) {
 
 
 
-
  /*
  This function attaches a listener on the button to add more specs.
   */
