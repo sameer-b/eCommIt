@@ -11,13 +11,12 @@ pre {
     overflow: hidden ;
 }
 
-.preview img {
+.preview  {
     border: 1px solid darkgray;
 }
 
 
 .thumbnail img {
-    border: 1px solid darkgray;
     margin: 1px;
 }
 .productDescription {
