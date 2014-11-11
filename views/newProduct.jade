@@ -10,6 +10,7 @@ html(lang="en")
 body
 
 	.container
+		include ./nav.jade
 		form.form-signin(action='/addProduct', method='POST', enctype="multipart/form-data")
 			h2.form-signin-heading Add new product
 			input.input-block-level(type='text', name = 'productName', placeholder='Product Name')

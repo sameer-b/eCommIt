@@ -8,6 +8,10 @@ html(lang="en")
 		title Login - eCommIt
 body
 	.container
+		include ./nav.jade
+		- if ( typeof(message) != 'undefined'){
+		p.alert.alert-danger #{message}
+		-}
 		form.form-signin(action='authUser', method='POST')
 			h2.form-signin-heading Please sign in
 			input.input-block-level(type='text', name = 'email', placeholder='Email address')

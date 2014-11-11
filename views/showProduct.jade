@@ -11,14 +11,7 @@ html(lang="en")
 		title Product - eCommIt
 body
 	.container
-		ul(class="nav nav-pills" role="tablist")
-			li(role="presentation")
-				a(href='/products') Products
-			li(role="presentation")
-				a(href='/newProduct') Add Product
-			li(role="presentation")
-				a(href='/logout') Logout
-
+		include ./nav.jade
 		.row
 			.span7
 				.imageBox

@@ -8,6 +8,7 @@ html(lang="en")
 		title Register - eCommIt
 body
 	.container
+		include ./nav.jade
 		form.form-signin(action='addUser', method='POST')
 			h2.form-signin-heading Please sign up
 			input.input-block-level(type='text', name = 'name', placeholder='Your name')
