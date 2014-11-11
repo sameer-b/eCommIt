@@ -39,10 +39,6 @@ app.post('/authUser', function (request, response) {
   um.handleLogin(request, response);
 });
 
-app.get('/home', function (request, response) {
-  var content = "<html><head></head><body><h1>Home</h1></body></html>";
-  um.authenticateUser(request.cookies, response, content);
-});
 
 app.get('/newProduct' , function (request , response ){
   var content = 'newProduct';

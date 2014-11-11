@@ -16,10 +16,9 @@ body
 			input.input-block-level(type='text', name = 'productPrice', placeholder='Price')
 			textarea.input-block-level(type='text', rows = '5' name = 'productDescription', placeholder='Description')
 			textarea.input-block-level(type='text' rows = '4' name = 'productSummary' , placeholder = 'Product Summary')
-			input.input-block-level(type='file', name='image1')
-			input.input-block-level(type='file', name='image2')
-			input.input-block-level(type='file', name='image3')
-			input.input-block-level(type='file', name='image4')
+			input.input-block-level.col-md-4(type='file', name='image1')
+			br
+			button.btn.btn-small.btn-primary.imageButton(type='button') Add more images
 			h4.form-signin-heading Product Specifications
 			input(class='col-md-4-offset-1' type='text', name = 'spec', placeholder='Specification 1')
 			input(class='col-md-4-offset-1' type='text', name = 'value', placeholder='Value of specification 1')

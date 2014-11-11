@@ -16,6 +16,18 @@ $( document ).ready( function(data) {
  	});
  });
 
+/*
+This function attaches a listener on the button to add more images.
+ */
+
+$( document ).ready( function() {
+	var numberOfSpecs = 1;
+	$('.imageButton').click( function() {
+		var addImg = "<input class = 'col-md-4' class = 'input-block-level', type = 'file' , name = 'image"+(++numberOfSpecs)+"'  /> </br>";
+		$('.imageButton').before(addImg);
+	});
+});
+
 
  /*
  	This function initializes the thumbnails
