@@ -51,7 +51,12 @@ app.post('/addProduct', function (request, response) {
 });
 
 app.get('/product/:id', function ( request, response) {
-  pm.showProduct(request,response,request.params.id);
+  pm.showProduct(request,response,request.params.id,'showProduct');
+});
+
+app.get('/editProduct/:id', function ( request , response ){
+  pm.showProduct(request, response, request.params.id, 'editProduct');
+
 });
 
 app.get('/products', function( request, response){

@@ -61,7 +61,7 @@ var thumbnailEvent = function() {
 		$('.preview').children().remove();
 		$('.preview').append($(this).clone());
 	});
-}
+};
 
 /*
 This function enables clicking on the preview for the lightbox to show up.
@@ -78,4 +78,4 @@ var addLightBox = function () {
 			}
 		));
 	});
-}
+};

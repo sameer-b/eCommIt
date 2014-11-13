@@ -12,7 +12,7 @@ body
 		- if ( typeof(message) != 'undefined'){
 		p.alert.alert-danger #{message}
 		-}
-		form.form-signin(action='authUser', method='POST')
+		form.form-signin(action='/authUser/#{destination}', method='POST')
 			h2.form-signin-heading Please sign in
 			input.input-block-level(type='text', name = 'email', placeholder='Email address')
 			input.input-block-level(type='password', name = 'password' , placeholder='Password')
