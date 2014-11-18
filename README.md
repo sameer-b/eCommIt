@@ -8,21 +8,26 @@ Clone the repo
  `git clone "https://github.com/sameer-b/eCommIt"`  
 cd into the repo directory.  
  `cd ecommit`  
-Get the required node packages.  
+Open `./lib/applicationCredentials.js`
+Add mongo url to `databaseUrl`
+Add password for encryption in `cookieEncryptionKey`
+Get the required node packages.
 `npm install `
 ## Running ##
 
 Start a mongo server instance.  
 `mongod --smallfiles --dbpath PATH_TO_YOUR_REPO/data`  
 You can start it anywhere you like.  
-
 Run the app with.  
 `node app.js`  
 
 ##Code structure##
-`/data (empty directory to start mongodb instance)  `  
-`/lib  (Contains libraries for various functions)  `  
-`/views (Contains the html views)  `  
-`app.js  (Main app)  `  
-`package.json  (Required Packages)  `  
+`/data` (empty directory to start mongodb instance.)    
+`/lib`  (Contains specific application code.)    
+`/public/views` (Contains the html views.)    
+`/public/img` (Contains images to be served in the views.)    
+`/public/css` (Contains styling for the views.)  
+`/public/js` (Contains client side js code.)  
+`app.js`  (Main application file.)    
+`package.json`  (Required packages.)    
 `README.md `  
