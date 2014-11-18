@@ -42,7 +42,7 @@ app.post('/authUser', function (request, response) {
 
 app.get('/newProduct' , function (request , response ){
   var content = 'newProduct';
-  um.authenticateUser(request.cookies, response, content);
+  um.authenticateAndRender(request.cookies, response, content);
 });
 
 app.post('/addProduct', function (request, response) {
