@@ -3,7 +3,6 @@ var um = require('./lib/userManagement.js');
 var pm = require('./lib/productManagement.js');
 var cookieParser = require('cookie-parser');
 
-var util = require('util');
 
 
 var path = require('path');
@@ -55,8 +54,12 @@ app.get('/product/:id', function ( request, response) {
 });
 
 app.get('/editProduct/:id', function ( request , response ){
-  pm.showProduct(request, response, request.params.id, 'editProduct');
+  //pm.showProduct(request, response, request.params.id, 'editProduct');
+  pm.editProduct(request, response, request.params.id);
+});
 
+app.post('/updateProduct/:id', function ( request , response ) {
+  pm.updateProduct(request, response , request.params.id );
 });
 
 app.get('/products', function( request, response){

@@ -13,8 +13,12 @@ $( document ).ready( function(data) {
   */
 
 var addMoreSpecs = function () {
-	var numberOfSpecs = 1;
+	var numberOfSpecs;
+
 	$('.specButton').click( function() {
+		var siblings = $('.specHead').nextUntil('.specButton');
+		var currentSpecValNumber = $(siblings).filter('input');
+		numberOfSpecs = parseInt(currentSpecValNumber.length/2);
 		var addSpec = "<input class = 'col-md-4' class = 'input-block-level', type = 'text' , name = 'spec"+(++numberOfSpecs)+"' placeholder = 'Specification "+numberOfSpecs+"' />";
 		var addSpecValue = "<input class = 'col-md-4' class = 'input-block-level', type = 'text' , name = 'value"+(numberOfSpecs)+"' placeholder = 'Value of specification "+numberOfSpecs+"' /> </br>";
 		$('.specButton').before(addSpec,addSpecValue);
