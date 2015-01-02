@@ -16,6 +16,6 @@ body
             each product in data
                 tr
                 td <a href=/product/#{product.productID}> #{product.productName} </a>
-                td #{product.productPrice}
+                td <a href=/editProduct/#{product.productID}> Edit </a>
 
 
