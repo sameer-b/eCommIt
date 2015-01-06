@@ -8,8 +8,11 @@ html(lang="en")
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
 		script(src='/js/addProducts.js')
 		script(src='/js/lightbox.js')
+		script(src='/js/bootstrap.min.js')
+		script(src='/js/shoppingCart.js')
 		title Product - eCommIt
 body
+	include ./shoppingCart
 	.container
 		include ./nav.jade
 		.row
@@ -20,13 +23,15 @@ body
 			.span4
 				.imgPrice
 					.imageTitle
-						h2 #{data.productName}
+						.productName
+							h2 #{data.productName}
 
 						.productSummary
 							pre #{data.productSummary}
-							h5 Price: #{data.productPrice}
+							.productPrice
+								h5 Price: #{data.productPrice}
 					.addToCartButton
-						input.btn.btn-large.btn-primary(value="Add To Cart")
+						input.btn.btn-large.btn-primary.addToCart(value="Add To Cart")
 		.row
 			.span12
 				.productDescription

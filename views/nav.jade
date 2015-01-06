@@ -1,9 +1,15 @@
-nav(class="navbar nav-pills navbar-default" role="navigation")
+nav(class="navbar navbar-default" role="navigation")
    .container-fluid
-      ul.nav.nav-pills
+      ul.nav.nav-pills.navbar-link
+         li(role="presentation")
+            a(class="navbar-brand" href="#") eCommIT
          li(role="presentation")
             a(href='/products') Products
          li(role="presentation")
             a(href='/newProduct') Add Product
          li(role="presentation")
             a(href='/logout') Logout
+         li(role="presentation")
+            a.viewCart Cart
+
+
