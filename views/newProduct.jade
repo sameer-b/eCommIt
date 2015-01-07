@@ -1,32 +1,28 @@
 doctype html
 html(lang="en")
-	head 
-		link(type='text/css', rel='stylesheet', href='/css/bootstrap.css')
-		link(type='text/css', rel='stylesheet', href='/css/bootstrap-responsive.css')
-		
-		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-		script(src='/js/addProducts.js')
+	head
+		include ./head.jade
 		title New Product - eCommIt
 body
-
 	.container
 		include ./nav.jade
 		form.form-signin(action='/addProduct', method='POST', enctype="multipart/form-data")
-			h2.form-signin-heading Add new product
-			input.input-block-level(type='text', name = 'productName', placeholder='Product Name')
-			input.input-block-level(type='text', name = 'productPrice', placeholder='Price')
-			textarea.input-block-level(type='text', rows = '5' name = 'productDescription', placeholder='Description')
-			textarea.input-block-level(type='text' rows = '4' name = 'productSummary' , placeholder = 'Product Summary')
-			input.input-block-level.col-md-4(type='file', name='image1')
-			br
-			button.btn.btn-small.btn-primary.imageButton(type='button') Add more images
-			h4.form-signin-heading.specHead Product Specifications
-			input(class='col-md-4-offset-1' type='text', name = 'spec1', placeholder='Specification 1')
-			input(class='col-md-4-offset-1' type='text', name = 'value1', placeholder='Value of specification 1')
-			br
-			button.btn.btn-small.btn-primary.specButton(type='button') Add more specs
-			br
-			input.btn.btn-default.btn-primary(type='submit')
+			div.form-group
+				h2.form-signin-heading Add new product
+				input.input-block-level.form-control(type='text', name = 'productName', placeholder='Product Name')
+				input.input-block-level.form-control(type='text', name = 'productPrice', placeholder='Price')
+				textarea.input-block-level.form-control(type='text', rows = '5' name = 'productDescription', placeholder='Description')
+				textarea.input-block-level.form-control(type='text' rows = '4' name = 'productSummary' , placeholder = 'Product Summary')
+				input.input-block-level.form-control(type='file', name='image1')
+				br
+				button.btn.btn-small.btn-primary.imageButton(type='button') Add more images
+				h4.form-signin-heading.specHead Product Specifications
+				input.form(class='form-control' type='text', name = 'spec1', placeholder='Specification 1')
+				input.form(class='form-control' type='text', name = 'value1', placeholder='Value of specification 1')
+				br
+				button.btn.btn-small.btn-primary.specButton(type='button') Add more specs
+				br
+				input.btn.btn-default.btn-primary(type='submit')
 
 
 

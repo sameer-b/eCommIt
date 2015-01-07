@@ -1,8 +1,13 @@
 .imageBox {
     height:  50%;
 }
+.input-block-level{
+    margin : 1%;
+}
 
-
+.form-control {
+    margin: 1%;
+}
 pre {
     font-family:  inherit;
 }
@@ -68,3 +73,14 @@ margin-top:  5% ;
 .quantity {
     display: inline;
 }
+
+.viewCart span {
+    margin-left: 3px;
+}
+
+element.style {
+}
+.navbar li  {
+    padding: 10px 10px 5px 10px;
+}
+

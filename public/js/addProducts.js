@@ -19,9 +19,9 @@ var addMoreSpecs = function () {
 		var siblings = $('.specHead').nextUntil('.specButton');
 		var currentSpecValNumber = $(siblings).filter('input');
 		numberOfSpecs = parseInt(currentSpecValNumber.length/2);
-		var addSpec = "<input class = 'col-md-4' class = 'input-block-level', type = 'text' , name = 'spec"+(++numberOfSpecs)+"' placeholder = 'Specification "+numberOfSpecs+"' />";
-		var addSpecValue = "<input class = 'col-md-4' class = 'input-block-level', type = 'text' , name = 'value"+(numberOfSpecs)+"' placeholder = 'Value of specification "+numberOfSpecs+"' /> </br>";
-		$('.specButton').before(addSpec,addSpecValue);
+		var addSpec = "<input class = 'form-control', type = 'text' , name = 'spec"+(++numberOfSpecs)+"' placeholder = 'Specification "+numberOfSpecs+"' />";
+		var addSpecValue = "<input class = 'form-control', type = 'text' , name = 'value"+(numberOfSpecs)+"' placeholder = 'Value of specification "+numberOfSpecs+"' /> </br>";
+		$('.specButton').before(addSpec+addSpecValue);
 	});
 };
 
@@ -33,7 +33,7 @@ This function attaches a listener on the button to add more images.
 var addMoreImages = function() {
 	var numberOfImages = 1;
 	$('.imageButton').click( function() {
-		var addImg = "<input class = 'col-md-4' class = 'input-block-level', type = 'file' , name = 'image"+(++numberOfImages)+"'  /> </br>";
+		var addImg = "<input class = 'input-block-level form-control', type = 'file' , name = 'image"+(++numberOfImages)+"'  /> </br>";
 		$('.imageButton').before(addImg);
 	});
 };

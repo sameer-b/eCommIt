@@ -85,6 +85,7 @@ var displayCart = function() {
                             "</tr>");
           }
           addCheckoutButton();
+          updateTotal();
       }
   }
   else {
@@ -192,6 +193,8 @@ var addToCart = function() {
         localStorage['ecommitCart'] = JSON.stringify(cart);
         //Notify the user about the addition of the product to the cart.
         flashMessage("Product added to cart!","alert-success");
+        updateTotal();
+
         //update the count shown on the badge.
         updateCartBadge();
     }
@@ -208,6 +211,7 @@ var incrementQuantity = function(productId) {
             localStorage['ecommitCart'] = JSON.stringify(cart);
             //Show the user that the quantity has been updated.
             flashMessage("Product added to cart!","alert-success");
+            updateTotal();
             updateCartBadge();
             return true;
         }
@@ -232,6 +236,7 @@ var decrementQuantity = function(productId) {
             localStorage['ecommitCart'] = JSON.stringify(cart);
             //Show the user that the quantity has been updated.
             flashMessage("Product removed from cart!","alert-warning");
+            updateTotal();
             updateCartBadge();
             return true;
         }
@@ -283,4 +288,28 @@ var fadeMessage = function(timeOut) {
             $(this).remove();
         });
     }, timeOut);
+};
+/**
+ * Update the value of total in the cart!
+ */
+var updateTotal = function () {
+    $('.sumTotal').html("<h3> Total: $" + calculateCartTotal().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " </h3>");
+};
+/**
+ *This function calculates the sum total of the products in the cart.
+ */
+
+var calculateCartTotal = function () {
+  var sumTotal = parseInt(0);
+    if(cartExists()) {
+        var cart = JSON.parse(localStorage['ecommitCart']);
+        for ( var i = 0 ; i < cart.length ; ++i ) {
+            console.log("Price"+cart[i].productPrice);
+            var price = (cart[i].productPrice).replace(',','');
+            var quantity = (cart[i].quantity);
+            sumTotal = sumTotal + (parseInt(price) * parseInt(quantity));
+        }
+        return sumTotal;
+    }
+    return sumTotal;
 };
