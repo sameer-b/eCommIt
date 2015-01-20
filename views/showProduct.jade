@@ -46,7 +46,32 @@ body
 							tr
 
 						//-else
-							td #{value}
+		hr
+		h5 Reviews
+		a.link(href='/newReview/#{data.productID}') Write a Review
+		.reviews
+			if reviews.length == 0
+				p
+					i Sorry there are no reviews for this product!
+			if reviews.length > 0
+				table.table.table-condensed.table-bordered
+					tr
+						th Author
+						th Review
+						th Rating
+					each review in reviews
+						tr
+							td #{review.author}
+							td
+								table
+									th #{review.reviewTitle}
+									tr
+
+									tr
+										td #{review.review}
+
+							td #{review.rating}/5
+
 
 
 

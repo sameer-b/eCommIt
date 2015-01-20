@@ -45,8 +45,11 @@ app.get('/newProduct' , function (request , response ){
 });
 
 app.post('/addProduct', function (request, response) {
+  pm.addNewProduct(request,response);
+});
 
-    pm.addNewProduct(request,response);
+app.post('/addReview', function ( request, response ) {
+  pm.addReview(request,response);
 });
 
 app.get('/product/:id', function ( request, response) {
@@ -64,6 +67,10 @@ app.post('/updateProduct/:id', function ( request , response ) {
 
 app.get('/products', function( request, response){
   pm.listProducts(request,response);
+});
+
+app.get('/newReview/:id', function( request, response) {
+  um.authenticateAndRender(request.cookies, response, 'newReview', {productID: request.params.id});
 });
 
 var server = app.listen(3000, function () {

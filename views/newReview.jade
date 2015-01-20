@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+   head
+      include ./head.jade
+      script(src='/js/rating.js')
+      link(rel="stylesheet", type = 'text/css', href="/css/rating.css")
+      title Edit Product - eCommIt
+body
+   .container
+      include ./nav.jade
+      div.ratings
+         h4 Write a review
+         form(action='/addReview', method='POST', enctype="multipart/form-data")
+            label( for = 'ratingSlider') Rating
+            input(type = 'range', min = '1', max = '5', id = 'ratingSlider', name = 'rating' )
+            input.form-control(type = 'text', name = 'ratingNumber', id = 'ratingDisplay')
+            label( for = 'reviewTitle' id = 'reviewTitleLabel') Title
+            input( type = 'text', name = 'reviewTitle' id = 'reviewTitle')
+            label( for = 'review' id = 'reviewLabel') Review
+            textarea(rows = '5', name = 'review', id = 'review', type='text' )
+            input(type = "hidden", name = 'productID', value = '#{productID}')
+            input.btn.btn-default.btn-primary(type='submit')
+
+
+

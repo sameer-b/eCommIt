@@ -1,0 +1,43 @@
+
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
+.ratings label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.ratings label span {
+    padding: 3px;
+}
+
+#ratingSlider {
+    width : 20%;
+    display: inline;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#ratingDisplay {
+    width: 5%;
+}
+
+
+#review {
+    display: block;
+
+}
+
+#reviewLabel {
+    display: block;
+    margin-top: 5%;
+}
+#reviewTitleLabel {
+    display: block;
+    margin-top: 5%;
+}
+#review {
+    width: 50%;
+}
